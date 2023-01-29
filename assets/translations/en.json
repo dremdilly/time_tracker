@@ -1,0 +1,9 @@
+{
+  "addSections": "Add section",
+  "sectionName": "Section name",
+  "addTask": "Add task",
+  "taskName": "Task name",
+  "history": "History",
+  "completedTasks": "Completed tasks",
+  "exportToCsv": "Export to CSV"
+}

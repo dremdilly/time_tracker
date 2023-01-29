@@ -1,0 +1,9 @@
+{
+  "addSections": "Добавить раздел",
+  "sectionName": "Название раздела",
+  "addTask": "Добавить задачу",
+  "taskName": "Название задачи",
+  "history": "История",
+  "completedTasks": "Завершенные задачи",
+  "exportToCsv": "Экспорт в CSV"
+}

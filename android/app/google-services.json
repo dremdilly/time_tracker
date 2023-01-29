@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "767898419227",
+    "project_id": "timetrackerapp-621ec",
+    "storage_bucket": "timetrackerapp-621ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767898419227:android:24f05c020ac1a320d8f8be",
+        "android_client_info": {
+          "package_name": "com.daurenbek.time_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767898419227-skre5030tj8v9sdq1mkcnmii4e5dnf5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYwGPBY3_o6me954Oj5sDXNtXDlAsvkmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767898419227-skre5030tj8v9sdq1mkcnmii4e5dnf5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
