@@ -1,7 +1,5 @@
 # time_tracker
 
-Take-Home Challenge
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
