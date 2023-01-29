@@ -1,5 +1,6 @@
 # time_tracker
 
+App with kanban board and time tracking implementation
 ## Getting Started
 
 This project is a starting point for a Flutter application.
