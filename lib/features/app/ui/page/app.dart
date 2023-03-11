@@ -12,10 +12,14 @@ class App extends StatefulWidget {
 
   @override
   _AppState createState() => _AppState();
+
+  static _AppState of(BuildContext context) =>
+      context.findAncestorStateOfType<_AppState>()!;
 }
 
 class _AppState extends State<App> {
   late AppBloc appBloc;
+  ThemeMode _themeMode = ThemeMode.system;
 
   @override
   void initState() {
@@ -38,7 +42,7 @@ class _AppState extends State<App> {
             return MaterialApp(
               theme: appThemeLight(context),
               darkTheme: appThemeDark(context),
-              themeMode: ThemeMode.light,
+              themeMode: _themeMode,
               debugShowCheckedModeBanner: false,
               localizationsDelegates: provider.delegates,
               supportedLocales: provider.supportedLocales,
@@ -53,5 +57,11 @@ class _AppState extends State<App> {
             },
           ),
         ));
+  }
+
+  void changeTheme(ThemeMode themeMode) {
+    setState(() {
+      _themeMode = themeMode;
+    });
   }
 }

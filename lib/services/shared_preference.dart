@@ -4,9 +4,18 @@ final sharedPreference = SharedPreferenceHelper();
 
 class SharedPreferenceHelper {
   late SharedPreferences _sharedPreference;
+  static const String DARK_MODE = "darkMode";
 
   init() async {
     _sharedPreference = await SharedPreferences.getInstance();
+  }
+
+  bool? get darkMode {
+    return _sharedPreference.getBool(DARK_MODE);
+  }
+
+  void saveDarkMode(bool darkMode)  {
+    _sharedPreference.setBool(DARK_MODE, darkMode);
   }
 
   Future<bool> get authenticationStatus async {

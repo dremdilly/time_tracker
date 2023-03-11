@@ -14,6 +14,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await sharedPreference.init();
+  // sharedPreference.saveDarkMode(false);
   appDatabase = AppDatabase();
   appDatabase.initDao(appDatabase);
   setupLocator();

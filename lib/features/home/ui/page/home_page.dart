@@ -13,6 +13,7 @@ import 'package:time_tracker/models/SectionModel.dart';
 import 'package:time_tracker/routes.dart';
 import 'package:time_tracker/services/analytics_service.dart';
 import 'package:time_tracker/services/locator.dart';
+import 'package:time_tracker/services/shared_preference.dart';
 import 'package:time_tracker/translations_key/locale_keys.g.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,6 +24,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late bool isDarkMode;
   final PageController _pageController = PageController(viewportFraction: 0.88);
   late AppBloc appBloc;
   late HomeBloc homeBloc;
@@ -36,13 +38,14 @@ class _HomePageState extends State<HomePage> {
     homeBloc = HomeBloc();
     appBloc = BlocProvider.of<AppBloc>(context);
     homeBloc.add(GetSectionsEvent());
+    isDarkMode = sharedPreference.darkMode!;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor:  (!sharedPreference.darkMode!) ? AppColors.white : AppColors.dark,
       body: BlocConsumer(
         bloc: homeBloc,
         listener: (context, state) {},
@@ -89,9 +92,11 @@ class _HomePageState extends State<HomePage> {
         IconButton(icon: const Icon(Icons.history), onPressed: () {
           Navigator.pushNamed(context, Routes.history);
         }),
-        IconButton(icon: const Icon(Icons.settings), onPressed: () {})
+        IconButton(icon: const Icon(Icons.settings), onPressed: () {
+          Navigator.pushNamed(context, Routes.setting);
+        })
       ],
-      backgroundColor: AppColors.lightRed,
+      backgroundColor: sharedPreference.darkMode! ? AppColors.dark : AppColors.lightRed,
       elevation: 0,
     );
   }
